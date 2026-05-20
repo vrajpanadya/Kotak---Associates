@@ -1,0 +1,791 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact Us | Kotak & Associates{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="page-header-bg">
+        <span class="ph-shape ph-shape-1"></span>
+        <span class="ph-shape ph-shape-2"></span>
+        <span class="ph-shape ph-shape-3"></span>
+    </div>
+    <div class="page-header-inner">
+        <span class="ph-badge"><i class="fas fa-paper-plane"></i> Get In Touch</span>
+        <h1>Let's Start Your <span class="ph-highlight">Growth Journey</span></h1>
+        <p>Ready to unlock your business potential? Reach out and we'll respond within 24 hours.</p>
+        <div class="ph-meta">
+            <div class="ph-meta-item"><i class="fas fa-clock"></i> Quick Response</div>
+            <div class="ph-meta-item"><i class="fas fa-lock"></i> 100% Confidential</div>
+            <div class="ph-meta-item"><i class="fas fa-comments"></i> Free Consultation</div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="contact-form-centered fade-in">
+            <form class="contact-form" method="POST" action="{% url 'contact_submit' %}" id="contactForm">
+                {% csrf_token %}
+                <div class="form-header">
+                    <h3>Send Us a Message</h3>
+                    <p>Fill in the details below and we'll get back to you within 24 hours.</p>
+                </div>
+
+                <!-- Step indicators -->
+                <div class="form-steps">
+                    <div class="form-step-indicator active" data-step="1">
+                        <span class="step-number">1</span>
+                        <span class="step-label">Basic Info</span>
+                    </div>
+                    <div class="form-step-line"></div>
+                    <div class="form-step-indicator" data-step="2">
+                        <span class="step-number">2</span>
+                        <span class="step-label">More Details</span>
+                    </div>
+                </div>
+
+                <!-- Step 1: Basic Info -->
+                <div class="form-step-content active" id="step1">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                <input type="text" id="name" name="name" placeholder="Your full name" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="company_name">Company Name</label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+                                <input type="text" id="company_name" name="company_name" placeholder="Your company name">
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-next" onclick="goToStep(2)">
+                        Continue to More Details
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </button>
+                </div>
+
+                <!-- Step 2: More Details -->
+                <div class="form-step-content" id="step2">
+                    <div class="form-group">
+                        <label for="service_interested">Service You're Interested In</label>
+                        <div class="input-wrapper">
+                            <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                            <select id="service_interested" name="service_interested">
+                                <option value="">Select a service</option>
+                                <option value="virtual_cfo">Virtual CFO Services</option>
+                                <option value="tax_planning">Tax Planning & Compliance</option>
+                                <option value="business_advisory">Business Advisory</option>
+                                <option value="accounting">Accounting & Bookkeeping</option>
+                                <option value="audit">Audit & Assurance</option>
+                                <option value="gst">GST Compliance</option>
+                                <option value="company_formation">Company Formation</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="budget_range">Budget Range</label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                <select id="budget_range" name="budget_range">
+                                    <option value="">Select budget range</option>
+                                    <option value="below_25k">Below 25,000/month</option>
+                                    <option value="25k_50k">25,000 - 50,000/month</option>
+                                    <option value="50k_1l">50,000 - 1,00,000/month</option>
+                                    <option value="above_1l">Above 1,00,000/month</option>
+                                    <option value="discuss">Prefer to discuss</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="urgency">Timeline / Urgency</label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <select id="urgency" name="urgency">
+                                    <option value="">Select timeline</option>
+                                    <option value="immediate">Immediate (Within a week)</option>
+                                    <option value="short">Short-term (1-2 months)</option>
+                                    <option value="medium">Medium-term (3-6 months)</option>
+                                    <option value="flexible">Flexible / No rush</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message *</label>
+                        <div class="input-wrapper textarea-wrapper">
+                            <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell us about your requirements, challenges, or questions..." required></textarea>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-back" onclick="goToStep(1)">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                            Back
+                        </button>
+                        <button type="submit" class="btn btn-submit" id="submitBtn">
+                            <span class="btn-text">Send Message</span>
+                            <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+<!-- Google Maps Section -->
+<section class="contact-map-section">
+    <div class="container">
+        <div class="map-header fade-in">
+            <span class="map-eyebrow"><i class="fas fa-map-marker-alt"></i> Visit Our Office</span>
+            <h2 class="section-title">Find Us on the Map</h2>
+            <p class="section-subtitle">Drop by for a cup of chai — we'd love to meet you in person.</p>
+        </div>
+
+        <div class="map-wrap fade-in">
+            <div class="map-info-card">
+                <div class="mic-icon"><i class="fas fa-building"></i></div>
+                <h3>Kotak &amp; Associates</h3>
+                <p class="mic-address">805, Altimus, Nr. Dinesh Hall,<br>River Front Road, Ashram Road,<br>Ahmedabad - 380009</p>
+                <ul class="mic-details">
+                    <li><i class="fas fa-phone"></i> <a href="tel:+919427877187">+91 94278 77187</a></li>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:kotak810@gmail.com">kotak810@gmail.com</a></li>
+                    <li><i class="far fa-clock"></i> Mon - Sat, 9:00 AM - 6:00 PM</li>
+                </ul>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Altimus+Ashram+Road+Ahmedabad+380009"
+                   target="_blank" rel="noopener" class="btn btn-primary mic-directions">
+                    <i class="fas fa-directions"></i> Get Directions
+                </a>
+            </div>
+            <div class="map-embed">
+                <iframe
+                    src="https://maps.google.com/maps?q=Altimus%20Ashram%20Road%20Ahmedabad%20380009&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Centered Form Layout */
+.contact-form-centered {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+/* Form Header */
+.form-header {
+    margin-bottom: 25px;
+}
+
+.form-header h3 {
+    color: var(--text);
+    font-size: 1.4rem;
+    margin-bottom: 6px;
+}
+
+.form-header p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* Step Indicators */
+.form-steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 30px;
+    padding: 0 20px;
+}
+
+.form-step-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    color: #888;
+    font-weight: 700;
+    font-size: 0.85rem;
+    transition: all 0.4s;
+}
+
+.form-step-indicator.active .step-number {
+    background: linear-gradient(135deg, var(--highlight), var(--highlight-dark));
+    color: #fff;
+    box-shadow: 0 3px 12px rgba(233, 69, 96, 0.35);
+}
+
+.form-step-indicator.completed .step-number {
+    background: #28a745;
+    color: #fff;
+}
+
+.step-label {
+    font-size: 0.85rem;
+    color: #999;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.form-step-indicator.active .step-label {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.form-step-indicator.completed .step-label {
+    color: #28a745;
+}
+
+.form-step-line {
+    flex: 1;
+    height: 2px;
+    background: #e0e0e0;
+    margin: 0 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.form-step-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--highlight), var(--highlight-dark));
+    transition: width 0.5s ease;
+}
+
+.form-step-line.filled::after {
+    width: 100%;
+}
+
+/* Step Content */
+.form-step-content {
+    display: none;
+    animation: fadeSlideIn 0.4s ease;
+}
+
+.form-step-content.active {
+    display: block;
+}
+
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Form Rows */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+/* Input Wrapper with Icons */
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 14px;
+    color: #aaa;
+    pointer-events: none;
+    transition: color 0.3s;
+    z-index: 1;
+}
+
+.input-wrapper input,
+.input-wrapper select,
+.input-wrapper textarea {
+    width: 100%;
+    padding: 13px 14px 13px 44px;
+    border: 2px solid #e8e8e8;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: all 0.3s;
+    background: #fafafa;
+    color: var(--text);
+}
+
+.input-wrapper select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+    cursor: pointer;
+}
+
+.textarea-wrapper {
+    align-items: flex-start;
+}
+
+.textarea-wrapper .input-icon {
+    top: 15px;
+}
+
+.input-wrapper textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.input-wrapper input:focus,
+.input-wrapper select:focus,
+.input-wrapper textarea:focus {
+    outline: none;
+    border-color: var(--highlight);
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(233, 69, 96, 0.08);
+}
+
+.input-wrapper:focus-within .input-icon {
+    color: var(--highlight);
+}
+
+/* Buttons */
+.btn-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, var(--highlight), var(--highlight-dark));
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 8px;
+}
+
+.btn-next:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(233, 69, 96, 0.3);
+}
+
+.form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.btn-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 14px 24px;
+    background: transparent;
+    color: var(--text-light);
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-back:hover {
+    border-color: var(--text-light);
+    color: var(--text);
+}
+
+.contact-form .btn-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex: 1;
+    padding: 14px;
+    background: linear-gradient(135deg, var(--highlight), var(--highlight-dark));
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.contact-form .btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(233, 69, 96, 0.3);
+}
+
+/* Enhanced Contact Form container override */
+.contact-form {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+/* Contact Details Strip */
+.contact-details-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 50px;
+    padding-top: 40px;
+    border-top: 1px solid #eee;
+}
+
+.contact-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 20px;
+    border-radius: 12px;
+    background: var(--white);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: all 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.contact-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--highlight), var(--highlight-dark));
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.contact-card strong {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text);
+    margin-bottom: 4px;
+}
+
+.contact-card p {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .contact-details-strip {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form {
+        padding: 25px;
+    }
+
+    .form-steps {
+        padding: 0;
+    }
+
+    .step-label {
+        font-size: 0.75rem;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .btn-back {
+        width: 100%;
+    }
+
+    .contact-details-strip {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin-top: 35px;
+        padding-top: 30px;
+    }
+}
+
+/* Google Maps Section */
+.contact-map-section {
+    padding: 80px 20px 100px;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.map-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+.map-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--highlight);
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.map-wrap {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+    background: #fff;
+}
+
+.map-info-card {
+    padding: 40px 35px;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #312e81 100%);
+    color: #f8fafc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.map-info-card::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle, rgba(233, 69, 96, 0.35), transparent 70%);
+    filter: blur(40px);
+    pointer-events: none;
+}
+
+.mic-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--highlight), #c73750);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 22px;
+    box-shadow: 0 10px 25px rgba(233, 69, 96, 0.35);
+    position: relative;
+}
+
+.map-info-card h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #fff;
+    position: relative;
+}
+
+.mic-address {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 22px;
+    position: relative;
+}
+
+.mic-details {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+}
+
+.mic-details li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.92rem;
+    color: #e2e8f0;
+}
+
+.mic-details li i {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--highlight);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+
+.mic-details li a {
+    color: #e2e8f0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.mic-details li a:hover {
+    color: var(--highlight);
+}
+
+.mic-directions {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 13px 22px;
+    background: linear-gradient(135deg, var(--highlight), #c73750);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+    align-self: flex-start;
+    position: relative;
+}
+
+.mic-directions:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(233, 69, 96, 0.4);
+    color: #fff;
+}
+
+.map-embed {
+    position: relative;
+    min-height: 480px;
+    background: #eaeef4;
+}
+
+.map-embed iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    filter: saturate(1.05);
+}
+
+@media (max-width: 900px) {
+    .map-wrap {
+        grid-template-columns: 1fr;
+    }
+
+    .map-info-card {
+        padding: 32px 26px;
+    }
+
+    .map-embed {
+        min-height: 360px;
+    }
+
+    .contact-map-section {
+        padding: 60px 16px 80px;
+    }
+}
+</style>
+
+<script>
+function goToStep(step) {
+    // Validate step 1 before moving to step 2
+    if (step === 2) {
+        const name = document.getElementById('name');
+        const email = document.getElementById('email');
+        if (!name.value.trim()) { name.focus(); return; }
+        if (!email.value.trim() || !email.validity.valid) { email.focus(); return; }
+    }
+
+    // Update step content
+    document.querySelectorAll('.form-step-content').forEach(el => el.classList.remove('active'));
+    document.getElementById('step' + step).classList.add('active');
+
+    // Update indicators
+    document.querySelectorAll('.form-step-indicator').forEach(ind => {
+        const s = parseInt(ind.dataset.step);
+        ind.classList.remove('active', 'completed');
+        if (s === step) ind.classList.add('active');
+        else if (s < step) ind.classList.add('completed');
+    });
+
+    // Update connecting line
+    const line = document.querySelector('.form-step-line');
+    if (step >= 2) line.classList.add('filled');
+    else line.classList.remove('filled');
+}
+
+// Allow clicking step indicators
+document.querySelectorAll('.form-step-indicator').forEach(ind => {
+    ind.addEventListener('click', () => goToStep(parseInt(ind.dataset.step)));
+});
+</script>
+{% endblock %}

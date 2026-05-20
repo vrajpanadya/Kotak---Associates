@@ -1,0 +1,458 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Kotak & Associates | A & B Business Advisory LLP{% endblock %}</title>
+    <meta name="description" content="{% block meta_desc %}Expert Virtual CFO & Financial Advisory services in Ahmedabad. Financial Planning, Budgeting, Cash Flow Management, KPI Tracking, IPO Advisory by Kotak & Associates.{% endblock %}">
+    <meta name="keywords" content="Virtual CFO, Financial Planning, Business Advisory, GST Compliance, CA Firm Ahmedabad, Kotak Associates">
+    <meta name="author" content="Kotak & Associates">
+    <meta property="og:title" content="{% block og_title %}Kotak & Associates | Virtual CFO Services{% endblock %}">
+    <meta property="og:description" content="Expert Virtual CFO & Financial Advisory services helping businesses achieve growth and financial clarity.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="{% static 'images/logo.jpeg' %}">
+    <link rel="canonical" href="{{ request.build_absolute_uri }}">
+    <link rel="icon" type="image/jpeg" href="{% static 'images/logo.jpeg' %}">
+    <link rel="apple-touch-icon" href="{% static 'images/logo.jpeg' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Kotak & Associates & A & B Business Advisory LLP",
+        "description": "Expert Virtual CFO and Financial Advisory Services",
+        "url": "https://kotakassociates.com",
+        "telephone": "+917990432667",
+        "email": "kotak810@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "805, Altimus, Nr. Dinesh Hall, Ashram Road",
+            "addressLocality": "Ahmedabad",
+            "addressRegion": "Gujarat",
+            "postalCode": "380009",
+            "addressCountry": "IN"
+        },
+        "openingHoursSpecification": [
+            {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00"},
+            {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "16:00"}
+        ],
+        "priceRange": "$$",
+        "sameAs": []
+    }
+    </script>
+</head>
+<body>
+
+<!-- Preloader -->
+<div class="preloader" id="preloader">
+    <div class="preloader-inner">
+        <div class="preloader-ring"></div>
+        <span class="preloader-text">KA</span>
+    </div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="container">
+        <a href="{% url 'home' %}" class="logo">
+            <img src="{% static 'images/logo.jpeg' %}" alt="KA Logo" class="logo-img">
+            <span class="logo-text">
+                Kotak & Associates
+                <span>A & B Business Advisory LLP</span>
+            </span>
+        </a>
+        <button class="nav-hamburger" id="navToggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="{% url 'home' %}" class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">Home</a></li>
+            <li><a href="{% url 'about' %}" class="{% if request.resolver_match.url_name == 'about' %}active{% endif %}">About</a></li>
+            <li><a href="{% url 'services' %}" class="{% if request.resolver_match.url_name == 'services' or request.resolver_match.url_name == 'service_detail' %}active{% endif %}">Services</a></li>
+            <li><a href="{% url 'process' %}" class="{% if request.resolver_match.url_name == 'process' %}active{% endif %}">Process</a></li>
+            <li><a href="{% url 'contact' %}" class="{% if request.resolver_match.url_name == 'contact' %}active{% endif %}">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Success/Error Modal -->
+{% if messages %}
+{% for message in messages %}
+{% if message.tags == 'success' %}
+<div class="success-overlay" id="successOverlay">
+    <div class="success-modal">
+        <div class="success-checkmark">
+            <div class="check-circle">
+                <svg class="check-svg" viewBox="0 0 52 52">
+                    <circle class="check-circle-bg" cx="26" cy="26" r="25" fill="none"/>
+                    <path class="check-path" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                </svg>
+            </div>
+        </div>
+        <h2>Thank You! 🎉</h2>
+        <p>Your message has been sent successfully!</p>
+        <div class="success-details">
+            <span>✅ Our team will review your inquiry</span>
+            <span>📞 We'll get back to you within 24 hours</span>
+            <span>💼 Expert financial guidance awaits you</span>
+        </div>
+        <button class="success-btn" onclick="closeSuccessModal()">Got it! 👍</button>
+    </div>
+</div>
+{% else %}
+<div class="alert alert-error">{{ message }}</div>
+{% endif %}
+{% endfor %}
+{% endif %}
+
+{% block content %}{% endblock %}
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <!-- Footer Top -->
+        <div class="footer-grid">
+            <!-- Company Info -->
+            <div class="footer-col">
+                <div class="footer-logo-row">
+                    <img src="{% static 'images/logo.jpeg' %}" alt="KA Logo" class="footer-logo-img">
+                    <h3 class="footer-heading">Kotak & Associates</h3>
+                </div>
+                <p class="footer-tagline">A & B Business Advisory LLP</p>
+                <p class="footer-desc">
+                    Expert Virtual CFO services helping businesses achieve financial clarity, growth, and success.
+                </p>
+                <!-- Social Media -->
+                <div class="footer-socials">
+                    <a href="#" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-col">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'services' %}">Services</a></li>
+                    <li><a href="{% url 'process' %}">Process</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-col">
+                <h3 class="footer-heading">Contact Info</h3>
+                <ul class="footer-contact">
+                    <li>
+                        <span class="fc-icon">&#128205;</span>
+                        <span>805, Altimus, Nr. Dinesh Hall<br>River Front Road, Ashram Road<br>Ahmedabad - 380009</span>
+                    </li>
+                    <li>
+                        <span class="fc-icon">&#128222;</span>
+                        <span>7990432667 / 9427877187</span>
+                    </li>
+                    <li>
+                        <span class="fc-icon">&#9993;</span>
+                        <span>kotak810@gmail.com</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Working Hours & Newsletter -->
+            <div class="footer-col">
+                <h3 class="footer-heading">Working Hours</h3>
+                <ul class="footer-hours">
+                    <li><span>Monday - Friday</span><span>9:00 AM - 6:00 PM</span></li>
+                    <li><span>Saturday</span><span>10:00 AM - 4:00 PM</span></li>
+                    <li><span>Sunday</span><span>Closed</span></li>
+                </ul>
+
+                <h3 class="footer-heading" style="margin-top:25px;">Newsletter</h3>
+                <p class="footer-newsletter-text">Subscribe for financial tips & updates</p>
+                <form class="footer-newsletter" method="POST" action="{% url 'newsletter_subscribe' %}">
+                    {% csrf_token %}
+                    <input type="email" name="newsletter_email" placeholder="Your email" required>
+                    <button type="submit">&#10148;</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 Kotak & Associates & A & B Business Advisory LLP. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="{% url 'privacy_policy' %}">Privacy Policy</a>
+                <span>|</span>
+                <a href="{% url 'terms_of_service' %}">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Scroll to Top Button -->
+<button class="scroll-top" id="scrollToTop" title="Back to top">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/917990432667?text=Hello%20Kotak%20%26%20Associates!%20I%20want%20to%20know%20more%20about%20your%20services." class="wa-float" target="_blank" title="Chat on WhatsApp">
+    <div class="wa-pulse"></div>
+    <i class="fab fa-whatsapp"></i>
+    <span class="wa-tooltip">Chat with us</span>
+</a>
+
+<!-- Navbar scroll + Hamburger + Preloader + Scroll-to-Top -->
+<script>
+// Preloader
+window.addEventListener('load', function() {
+    var preloader = document.getElementById('preloader');
+    if (preloader) {
+        preloader.style.opacity = '0';
+        setTimeout(function() { preloader.style.display = 'none'; }, 500);
+    }
+});
+
+// Navbar scroll effect
+const navbar = document.querySelector('.navbar');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        navbar.classList.add('navbar-scrolled');
+    } else {
+        navbar.classList.remove('navbar-scrolled');
+    }
+});
+
+// Hamburger Menu Toggle
+var navToggle = document.getElementById('navToggle');
+var navLinks = document.getElementById('navLinks');
+if (navToggle) {
+    navToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('nav-open');
+        navToggle.classList.toggle('active');
+    });
+    // Close menu when a link is clicked
+    navLinks.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+            navLinks.classList.remove('nav-open');
+            navToggle.classList.remove('active');
+        });
+    });
+}
+
+// Scroll to Top Button
+var scrollBtn = document.getElementById('scrollToTop');
+window.addEventListener('scroll', function() {
+    if (window.scrollY > 400) {
+        scrollBtn.classList.add('show');
+    } else {
+        scrollBtn.classList.remove('show');
+    }
+});
+scrollBtn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+function closeSuccessModal() {
+    var overlay = document.getElementById('successOverlay');
+    if (overlay) {
+        overlay.style.opacity = '0';
+        setTimeout(function() { overlay.remove(); }, 400);
+    }
+}
+
+// Global fade-in animation for all pages
+const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.fade-in, .fc-fade').forEach(el => fadeObserver.observe(el));
+</script>
+
+<!-- Chatbot Script (disabled — widget removed) -->
+<script>
+(function() {
+    return; // chatbot widget has been removed
+    const bubble = document.getElementById('chatBubble');
+    const chatWindow = document.getElementById('chatWindow');
+    const chatClose = document.getElementById('chatClose');
+    const chatBody = document.getElementById('chatBody');
+    const chatInput = document.getElementById('chatInput');
+    const chatSend = document.getElementById('chatSend');
+    const suggestions = document.getElementById('chatSuggestions');
+
+    // Toggle chat window
+    bubble.addEventListener('click', function() {
+        chatWindow.classList.toggle('open');
+        bubble.classList.toggle('hidden');
+        if (chatWindow.classList.contains('open')) {
+            chatInput.focus();
+        }
+    });
+
+    chatClose.addEventListener('click', function() {
+        chatWindow.classList.remove('open');
+        bubble.classList.remove('hidden');
+    });
+
+    // Knowledge base
+    const knowledgeBase = [
+        {
+            keywords: ['service', 'services', 'offer', 'provide', 'kya karte', 'what do you do'],
+            answer: 'We offer a wide range of services including:<br>&#128313; Virtual CFO Services<br>&#128313; Financial Planning & Budgeting<br>&#128313; Cash Flow Management<br>&#128313; Financial Reporting & MIS<br>&#128313; Business Valuation<br>&#128313; Tax Planning & Compliance<br>&#128313; ROI & Profitability Analysis<br><br>Visit our <a href="/services/">Services page</a> to learn more!'
+        },
+        {
+            keywords: ['virtual cfo', 'vcfo', 'cfo', 'what is virtual'],
+            answer: 'A Virtual CFO provides all the expertise of a full-time Chief Financial Officer but on a flexible, part-time basis. You get strategic financial guidance, reporting, and planning — without the cost of a full-time hire. It\'s perfect for growing businesses that need expert financial leadership. &#128188;'
+        },
+        {
+            keywords: ['contact', 'reach', 'call', 'phone', 'email', 'address', 'location', 'sampark'],
+            answer: 'You can reach us through:<br>&#128222; Phone: +91 7990432667 / 9427877187<br>&#128231; Email: kotak810@gmail.com<br>&#128205; Office: 805, Altimus, Nr. Dinesh Hall, Ashram Road, Ahmedabad - 380009<br><br>Or fill out our <a href="/contact/">Contact Form</a> and we\'ll get back to you within 24 hours!'
+        },
+        {
+            keywords: ['fee', 'fees', 'cost', 'price', 'pricing', 'charge', 'kitna', 'rate', 'budget', 'affordable', 'expensive'],
+            answer: 'Our fees are customized based on your business size and requirements. We offer flexible plans to suit every budget — from startups to established businesses. &#128176;<br><br>Please <a href="/contact/">contact us</a> for a free consultation and personalized quote!'
+        },
+        {
+            keywords: ['cash flow', 'cashflow', 'cash management', 'money flow'],
+            answer: 'Cash flow management is one of our core specialties! We help you:<br>&#128313; Track receivables & payables efficiently<br>&#128313; Forecast future cash needs<br>&#128313; Avoid cash crunches<br>&#128313; Optimize working capital<br><br>Never worry about running out of cash again! &#128170;'
+        },
+        {
+            keywords: ['tax', 'taxation', 'gst', 'income tax', 'compliance', 'filing'],
+            answer: 'We handle complete tax planning and compliance:<br>&#128313; GST Filing & Compliance<br>&#128313; Income Tax Planning<br>&#128313; TDS Management<br>&#128313; Tax-saving Strategies<br>&#128313; Audit Support<br><br>Stay compliant and save more on taxes! &#128200;'
+        },
+        {
+            keywords: ['founder', 'who', 'team', 'about', 'company', 'background'],
+            answer: 'Kotak & Associates & A & B Business Advisory LLP was founded by <strong>Gaurang Kotak</strong> and <strong>Bharat Baneree</strong>. Our team of experienced finance professionals is dedicated to helping businesses achieve financial clarity and growth. &#127942;<br><br>Learn more on our <a href="/about/">About Us page</a>!'
+        },
+        {
+            keywords: ['process', 'how it works', 'steps', 'procedure', 'kaise', 'kevi rite'],
+            answer: 'Our process is simple and transparent:<br>1️⃣ <strong>Discovery</strong> — We understand your business & goals<br>2️⃣ <strong>Analysis</strong> — Deep dive into your financials<br>3���⃣ <strong>Strategy</strong> — Create a tailored financial plan<br>4️⃣ <strong>Execution</strong> — Implement and monitor<br>5️⃣ <strong>Review</strong> — Regular reviews and adjustments<br><br>See details on our <a href="/process/">Process page</a>!'
+        },
+        {
+            keywords: ['benefit', 'benefits', 'why', 'advantage', 'fayda'],
+            answer: 'Working with us gives you:<br>&#128313; Expert financial guidance at a fraction of the cost<br>&#128313; Better decision-making with accurate data<br>&#128313; Improved cash flow & profitability<br>&#128313; Reduced financial risks<br>&#128313; More time to focus on your core business<br><br>Explore all <a href="/benefits/">Benefits here</a>! &#128640;'
+        },
+        {
+            keywords: ['report', 'reporting', 'mis', 'financial report', 'statement'],
+            answer: 'We provide comprehensive financial reporting including:<br>&#128313; Monthly MIS Reports<br>&#128313; Profit & Loss Statements<br>&#128313; Balance Sheet Analysis<br>&#128313; Cash Flow Statements<br>&#128313; Budget vs Actual Reports<br><br>Get clear insights to make informed decisions! &#128202;'
+        },
+        {
+            keywords: ['valuation', 'business valuation', 'worth', 'value'],
+            answer: 'Business valuation helps you understand the true worth of your company. We use industry-standard methods to assess your business value — essential for fundraising, mergers, partnerships, or exit planning. &#128176;<br><br><a href="/contact/">Contact us</a> for a valuation consultation!'
+        },
+        {
+            keywords: ['startup', 'new business', 'small business', 'sme', 'msme'],
+            answer: 'Absolutely! We love working with startups and SMEs. &#128640; Our Virtual CFO service is especially designed for growing businesses that need expert financial guidance without the overhead of a full-time CFO. We\'ll help you build a strong financial foundation from day one!'
+        },
+        {
+            keywords: ['hello', 'hi', 'hey', 'good morning', 'good evening', 'namaste', 'kem cho'],
+            answer: 'Hello! &#128075; Welcome to Kotak & Associates! I\'m here to help you with any questions about our services, process, or anything else. Feel free to ask!'
+        },
+        {
+            keywords: ['thank', 'thanks', 'dhanyavad', 'aabhar'],
+            answer: 'You\'re welcome! &#128522; If you have any more questions, feel free to ask. We\'re always here to help! Have a great day! &#127775;'
+        },
+        {
+            keywords: ['bye', 'goodbye', 'see you', 'alvida'],
+            answer: 'Goodbye! &#128075; Thank you for visiting Kotak & Associates. If you ever need financial guidance, we\'re just a click away. Have a wonderful day! &#127775;'
+        }
+    ];
+
+    function findAnswer(question) {
+        const q = question.toLowerCase();
+        let bestMatch = null;
+        let bestScore = 0;
+
+        for (var i = 0; i < knowledgeBase.length; i++) {
+            var entry = knowledgeBase[i];
+            var score = 0;
+            for (var j = 0; j < entry.keywords.length; j++) {
+                if (q.indexOf(entry.keywords[j]) !== -1) {
+                    score += entry.keywords[j].length;
+                }
+            }
+            if (score > bestScore) {
+                bestScore = score;
+                bestMatch = entry;
+            }
+        }
+
+        if (bestMatch && bestScore > 0) {
+            return bestMatch.answer;
+        }
+        return 'I appreciate your question! &#128522; For detailed assistance, please <a href="/contact/">contact our team</a> or call us directly. We\'d love to help you personally!<br><br>You can also try asking about our <strong>services</strong>, <strong>process</strong>, <strong>fees</strong>, or <strong>benefits</strong>.';
+    }
+
+    function addMessage(text, sender) {
+        var msgDiv = document.createElement('div');
+        msgDiv.className = 'chat-msg ' + sender;
+        var bubbleDiv = document.createElement('div');
+        bubbleDiv.className = 'chat-bubble';
+        bubbleDiv.innerHTML = text;
+        msgDiv.appendChild(bubbleDiv);
+        chatBody.appendChild(msgDiv);
+        chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    function showTyping() {
+        var typing = document.createElement('div');
+        typing.className = 'chat-msg bot typing-indicator';
+        typing.innerHTML = '<div class="chat-bubble"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>';
+        chatBody.appendChild(typing);
+        chatBody.scrollTop = chatBody.scrollHeight;
+        return typing;
+    }
+
+    function handleSend() {
+        var text = chatInput.value.trim();
+        if (!text) return;
+
+        // Hide suggestions after first message
+        if (suggestions) {
+            suggestions.style.display = 'none';
+        }
+
+        addMessage(text, 'user');
+        chatInput.value = '';
+
+        // Show typing indicator then respond
+        var typingEl = showTyping();
+        setTimeout(function() {
+            typingEl.remove();
+            var answer = findAnswer(text);
+            addMessage(answer, 'bot');
+        }, 800 + Math.random() * 700);
+    }
+
+    chatSend.addEventListener('click', handleSend);
+    chatInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') handleSend();
+    });
+
+    // Suggestion buttons
+    document.querySelectorAll('.suggestion-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            chatInput.value = this.getAttribute('data-q');
+            handleSend();
+        });
+    });
+})();
+</script>
+
+{% block scripts %}{% endblock %}
+</body>
+</html>

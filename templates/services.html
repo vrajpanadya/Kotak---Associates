@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+
+{% block title %}Services | Kotak & Associates{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="page-header-bg">
+        <span class="ph-shape ph-shape-1"></span>
+        <span class="ph-shape ph-shape-2"></span>
+        <span class="ph-shape ph-shape-3"></span>
+    </div>
+    <div class="page-header-inner">
+        <span class="ph-badge"><i class="fas fa-briefcase"></i> Our Offerings</span>
+        <h1>Key Services <span class="ph-highlight">We Offer</span></h1>
+        <p>Comprehensive financial solutions tailored to accelerate your business growth and success.</p>
+        <div class="ph-meta">
+            <div class="ph-meta-item"><i class="fas fa-chart-pie"></i> 8 Core Services</div>
+            <div class="ph-meta-item"><i class="fas fa-handshake"></i> Client-First Approach</div>
+            <div class="ph-meta-item"><i class="fas fa-check-circle"></i> Result-Driven</div>
+        </div>
+    </div>
+</section>
+
+<section class="services-section">
+    <div class="container">
+        <h2 class="section-title fade-in">What We Bring to Your Business</h2>
+        <p class="section-subtitle fade-in">Click on any service to explore how we can help you grow</p>
+
+        <div class="srv-grid">
+
+            <!-- Service 1 -->
+            <a href="{% url 'service_detail' 'financial-planning-budgeting' %}" class="srv-card fade-in">
+                <div class="srv-card-front">
+                    <div class="srv-icon-wrap" style="background: linear-gradient(135deg, #e94560, #c73750);">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h3>Financial Planning & Budgeting</h3>
+                    <p>Strategic financial roadmaps and budget frameworks for growth.</p>
+                    <span class="srv-tap">View Details <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <!-- Service 2 -->
+            <a href="{% url 'service_detail' 'liquidity-management' %}" class="srv-card fade-in">
+                <div class="srv-card-front">
+                    <div class="srv-icon-wrap" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3>Liquidity Management</h3>
+                    <p>Ensure healthy cash reserves and optimal fund utilization.</p>
+                    <span class="srv-tap">View Details <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <!-- Service 3 -->
+            <a href="{% url 'service_detail' 'kra-kpi-tracking' %}" class="srv-card fade-in">
+                <div class="srv-card-front">
+                    <div class="srv-icon-wrap" style="background: linear-gradient(135deg, #10b981, #059669);">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>KRA-KPI Tracking</h3>
+                    <p>Track key performance indicators for business and employee performance.</p>
+                    <span class="srv-tap">View Details <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <!-- Service 4 -->
+            <a href="{% url 'service_detail' 'internal-control-system' %}" class="srv-card fade-in">
+                <div class="srv-card-front">
+                    <div class="srv-icon-wrap" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Internal Control System</h3>
+                    <p>Set up robust internal controls to prevent fraud and ensure compliance.</p>
+                    <span class="srv-tap">View Details <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <!-- Service 5 -->
+            <a href="{% url 'service_detail' 'finance-dashboards' %}" class="srv-card fade-in">
+                <div class="srv-card-front">
+                    <div class="srv-icon-wrap" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3>Finance Dashboards</h3>
+                    <p>Real-time visual dashboards for instant financial insights.</p>
+                    <span class="srv-tap">View Details <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <!-- Service 6 -->
+            <a href="{% url 'service_detail' 'ar-ap-management' %}" class="srv-card fade-in">
+                <div class="srv-card-front">
+                    <div class="srv-icon-wrap" style="background: linear-gradient(135deg, #ec4899, #db2777);">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3>AR & AP Management</h3>
+                    <p>Efficient accounts receivable and payable management.</p>
+                    <span class="srv-tap">View Details <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <!-- Service 7 -->
+            <a href="{% url 'service_detail' 'business-health-checkup' %}" class="srv-card fade-in">
+                <div class="srv-card-front">
+                    <div class="srv-icon-wrap" style="background: linear-gradient(135deg, #14b8a6, #0d9488);">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Business Health Checkup</h3>
+                    <p>Comprehensive assessment of your business's financial wellness.</p>
+                    <span class="srv-tap">View Details <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <!-- Service 8 -->
+            <a href="{% url 'service_detail' 'ipo-advisory' %}" class="srv-card fade-in">
+                <div class="srv-card-front">
+                    <div class="srv-icon-wrap" style="background: linear-gradient(135deg, #d4af37, #b8941f);">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>IPO Advisory</h3>
+                    <p>Expert guidance to prepare your company for an Initial Public Offering.</p>
+                    <span class="srv-tap">View Details <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- Bottom CTA -->
+        <div class="srv-bottom-cta fade-in">
+            <h2>Ready to Transform Your Business Finances?</h2>
+            <p>Let our experts create a tailored financial strategy for your success.</p>
+            <a href="{% url 'contact' %}" class="btn btn-primary">Schedule a Free Consultation</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

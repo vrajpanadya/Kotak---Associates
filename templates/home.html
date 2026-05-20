@@ -1,0 +1,327 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home | Kotak & Associates{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <div class="floating-icons">
+        <span class="float-icon" style="top:15%;left:8%;animation-delay:0s;">&#128200;</span>
+        <span class="float-icon" style="top:25%;right:10%;animation-delay:1.5s;">&#128176;</span>
+        <span class="float-icon" style="top:60%;left:5%;animation-delay:3s;">&#128202;</span>
+        <span class="float-icon" style="top:70%;right:7%;animation-delay:0.8s;">&#128161;</span>
+        <span class="float-icon" style="top:40%;left:15%;animation-delay:2.2s;">&#128178;</span>
+        <span class="float-icon" style="top:50%;right:15%;animation-delay:4s;">&#127942;</span>
+    </div>
+
+    <div class="hero-content">
+        <h1>
+            <span class="hero-line hero-line-1">Kotak & Associates</span>
+            <span class="hero-amp">&amp;</span>
+            <span class="hero-line hero-line-2">A & B Business Advisory LLP</span>
+        </h1>
+        <p class="tagline">
+            <span class="tagline-word">Unlock</span>
+            <span class="tagline-word">Your</span>
+            <span class="tagline-word">Business</span>
+            <span class="tagline-word">Potential</span>
+        </p>
+        <p class="hero-desc">
+            Expert Virtual CFO services helping businesses achieve financial clarity, growth, and success
+            through strategic planning, budgeting, forecasting, and financial reporting.
+        </p>
+        <div class="hero-buttons">
+            <a href="{% url 'contact' %}" class="btn btn-primary">Get Started</a>
+            <a href="{% url 'services' %}" class="btn btn-outline">Our Services</a>
+        </div>
+
+        <div class="hero-stats">
+            <div class="stat-item">
+                <span class="stat-number" data-target="8">0</span><span class="stat-plus">+</span>
+                <span class="stat-label">Services</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="10">0</span><span class="stat-plus">X</span>
+                <span class="stat-label">Business Valuation</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="100">0</span><span class="stat-plus">%</span>
+                <span class="stat-label">Client Satisfaction</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="scroll-indicator">
+        <div class="scroll-arrow"></div>
+    </div>
+</section>
+
+<!-- Trusted By / Intro Strip -->
+<section class="intro-strip">
+    <div class="container">
+        <div class="intro-strip-inner">
+            <div class="intro-item fade-in">
+                <span class="intro-icon">&#128170;</span>
+                <div>
+                    <h4>Integrity First</h4>
+                    <p>Honest financial guidance you can trust</p>
+                </div>
+            </div>
+            <div class="intro-item fade-in">
+                <span class="intro-icon">&#128269;</span>
+                <div>
+                    <h4>Full Transparency</h4>
+                    <p>Clear reporting at every step</p>
+                </div>
+            </div>
+            <div class="intro-item fade-in">
+                <span class="intro-icon">&#128161;</span>
+                <div>
+                    <h4>Innovation Driven</h4>
+                    <p>Modern strategies for modern businesses</p>
+                </div>
+            </div>
+            <div class="intro-item fade-in">
+                <span class="intro-icon">&#127942;</span>
+                <div>
+                    <h4>Excellence Always</h4>
+                    <p>Outstanding results, every time</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="home-why">
+    <div class="container">
+        <h2 class="section-title fade-in">Why Choose Us?</h2>
+        <p class="section-subtitle fade-in">We deliver what your business truly needs</p>
+        <div class="why-slideshow fade-in">
+            <img src="{% static 'images/site/meeting.jpg' %}" alt="Business meeting" class="why-slide">
+            <img src="{% static 'images/site/teamwork.jpg' %}" alt="Teamwork" class="why-slide">
+            <img src="{% static 'images/site/dashboard.jpg' %}" alt="Finance dashboard" class="why-slide">
+            <img src="{% static 'images/site/handshake.jpg' %}" alt="Client partnership" class="why-slide">
+        </div>
+        <div class="why-grid">
+            <div class="why-card fade-in">
+                <div class="why-icon-wrap"><span>&#128188;</span></div>
+                <h3>Expert Leadership</h3>
+                <p>Access top-tier financial leadership without the cost of a full-time CFO.</p>
+            </div>
+            <div class="why-card fade-in">
+                <div class="why-icon-wrap"><span>&#128200;</span></div>
+                <h3>Business Growth</h3>
+                <p>Strategic financial planning designed to scale your business to the next level.</p>
+            </div>
+            <div class="why-card fade-in">
+                <div class="why-icon-wrap"><span>&#128176;</span></div>
+                <h3>Cash Flow Control</h3>
+                <p>Stop the leak. We optimize your cash flow so profit stays in your pocket.</p>
+            </div>
+            <div class="why-card fade-in">
+                <div class="why-icon-wrap"><span>&#128202;</span></div>
+                <h3>Data-Driven Insights</h3>
+                <p>Real-time dashboards and reports that empower smarter decisions.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Preview -->
+<section class="home-services">
+    <div class="container">
+        <h2 class="section-title fade-in">What We Offer</h2>
+        <p class="section-subtitle fade-in">Our core services at a glance</p>
+        <div class="home-services-grid">
+            <div class="hs-card fade-in">
+                <div class="hs-number">01</div>
+                <h3>Financial Planning & Budgeting</h3>
+                <p>Strategic roadmaps and budget frameworks for sustainable growth.</p>
+            </div>
+            <div class="hs-card fade-in">
+                <div class="hs-number">02</div>
+                <h3>Liquidity Management</h3>
+                <p>Ensure healthy cash reserves and optimal fund utilization.</p>
+            </div>
+            <div class="hs-card fade-in">
+                <div class="hs-number">03</div>
+                <h3>Finance Dashboards</h3>
+                <p>Real-time visual dashboards for instant financial insights.</p>
+            </div>
+            <div class="hs-card fade-in">
+                <div class="hs-number">04</div>
+                <h3>KRA-KPI Tracking</h3>
+                <p>Track performance indicators for measurable business results.</p>
+            </div>
+            <div class="hs-card fade-in">
+                <div class="hs-number">05</div>
+                <h3>Internal Controls</h3>
+                <p>Robust systems to prevent fraud and ensure compliance.</p>
+            </div>
+            <div class="hs-card fade-in">
+                <div class="hs-number">06</div>
+                <h3>IPO Advisory</h3>
+                <p>Expert guidance to prepare your company for public offering.</p>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:40px;" class="fade-in">
+            <a href="{% url 'services' %}" class="btn btn-primary">View All Services</a>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works Preview -->
+<section class="home-process">
+    <div class="container">
+        <h2 class="section-title fade-in">How It Works</h2>
+        <p class="section-subtitle fade-in">Simple steps to transform your finances</p>
+        <div class="process-timeline">
+            <div class="process-step fade-in">
+                <div class="ps-dot"></div>
+                <div class="ps-content">
+                    <h3>Onboarding</h3>
+                    <p>We understand your business, goals, and challenges.</p>
+                </div>
+            </div>
+            <div class="process-step fade-in">
+                <div class="ps-dot"></div>
+                <div class="ps-content">
+                    <h3>Strategy & Goal Setting</h3>
+                    <p>Define scope, set clear financial targets and KPIs.</p>
+                </div>
+            </div>
+            <div class="process-step fade-in">
+                <div class="ps-dot"></div>
+                <div class="ps-content">
+                    <h3>Implementation</h3>
+                    <p>Consultant visits, employee training, and system setup.</p>
+                </div>
+            </div>
+            <div class="process-step fade-in">
+                <div class="ps-dot"></div>
+                <div class="ps-content">
+                    <h3>Review & Reporting</h3>
+                    <p>Monthly performance reviews with detailed reports.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="home-testimonials">
+    <div class="container">
+        <h2 class="section-title fade-in">What Our Clients Say</h2>
+        <p class="section-subtitle fade-in">Trusted by businesses across industries</p>
+        <div class="testimonials-grid">
+            <div class="testimonial-card fade-in">
+                <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="tc-text">"Kotak & Associates transformed our financial operations. Their Virtual CFO service gave us the clarity we needed to grow 3X in just one year."</p>
+                <div class="tc-author">
+                    <div class="tc-avatar">RK</div>
+                    <div>
+                        <h4>Rajesh Kumar</h4>
+                        <p>CEO, TechStart Solutions</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card fade-in">
+                <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="tc-text">"Their data-driven approach and real-time dashboards changed how we make decisions. Highly recommend their services to any growing business."</p>
+                <div class="tc-author">
+                    <div class="tc-avatar">PS</div>
+                    <div>
+                        <h4>Priya Shah</h4>
+                        <p>Founder, GreenLeaf Exports</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card fade-in">
+                <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="tc-text">"Professional, transparent, and truly invested in our success. They helped us fix our cash flow issues and prepare for IPO readiness."</p>
+                <div class="tc-author">
+                    <div class="tc-avatar">AM</div>
+                    <div>
+                        <h4>Amit Mehta</h4>
+                        <p>Director, BuildRight Infra</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Office Image Banner -->
+<section class="home-office-banner fade-in">
+    <img src="{% static 'images/site/office.jpg' %}" alt="Kotak & Associates Office">
+    <div class="home-office-overlay">
+        <div class="home-office-content">
+            <h3>Our Office in Ahmedabad</h3>
+            <p>805, Altimus, Nr. Dinesh Hall, Ashram Road</p>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="cta-banner">
+    <div class="container">
+        <div class="cta-center fade-in">
+            <h2>Ready to Unlock Your Business Potential?</h2>
+            <p>Get a strategic financial partner without the cost of a full-time CFO. Let's grow together.</p>
+            <div class="cta-buttons">
+                <a href="{% url 'contact' %}" class="btn btn-primary">Contact Us Today</a>
+                <a href="tel:7990432667" class="btn btn-outline">Call: 7990432667</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+// Counter animation
+function animateCounters() {
+    document.querySelectorAll('.stat-number').forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        const duration = 1500;
+        const step = target / (duration / 30);
+        let current = 0;
+        const timer = setInterval(() => {
+            current += step;
+            if (current >= target) {
+                counter.textContent = target;
+                clearInterval(timer);
+            } else {
+                counter.textContent = Math.floor(current);
+            }
+        }, 30);
+    });
+}
+
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateCounters();
+            statsObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+statsObserver.observe(document.querySelector('.hero-stats'));
+</script>
+{% endblock %}

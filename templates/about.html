@@ -1,0 +1,211 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Us | Kotak & Associates{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <div class="page-header-bg">
+        <span class="ph-shape ph-shape-1"></span>
+        <span class="ph-shape ph-shape-2"></span>
+        <span class="ph-shape ph-shape-3"></span>
+    </div>
+    <div class="page-header-inner">
+        <span class="ph-badge"><i class="fas fa-building"></i> About Kotak & Associates</span>
+        <h1>Empowering Businesses with <span class="ph-highlight">Financial Clarity</span></h1>
+        <p>Trusted Virtual CFO partners helping entrepreneurs turn numbers into growth, strategy, and success.</p>
+        <div class="ph-meta">
+            <div class="ph-meta-item"><i class="fas fa-award"></i> 10+ Years Expertise</div>
+            <div class="ph-meta-item"><i class="fas fa-users"></i> 200+ Happy Clients</div>
+            <div class="ph-meta-item"><i class="fas fa-chart-line"></i> Growth-Focused</div>
+        </div>
+    </div>
+</section>
+
+<!-- About Image Banner -->
+<section class="about-banner-wrap fade-in">
+    <div class="about-banner">
+        <div class="about-slideshow">
+            <img src="{% static 'images/site/about-team.jpg' %}" alt="Kotak & Associates Team" class="about-slide">
+            <img src="{% static 'images/site/office.jpg' %}" alt="Our Office" class="about-slide">
+            <img src="{% static 'images/site/financial-planning.jpg' %}" alt="Financial Planning" class="about-slide">
+            <img src="{% static 'images/site/success.jpg' %}" alt="Client Success" class="about-slide">
+        </div>
+        <div class="about-banner-overlay">
+            <div class="about-banner-stats">
+                <div class="ab-stat"><span>10+</span><small>Years Experience</small></div>
+                <div class="ab-stat"><span>200+</span><small>Clients Served</small></div>
+                <div class="ab-stat"><span>8</span><small>Core Services</small></div>
+                <div class="ab-stat"><span>100%</span><small>Commitment</small></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Content -->
+<section class="about-section">
+    <div class="container">
+        <div class="about-grid fade-in">
+            <div class="about-text">
+                <h2 class="section-title" style="text-align:left;">Our Mission</h2>
+                <p>
+                    At Kotak & Associates & A & B Business Advisory LLP, our mission is to provide expert
+                    Virtual CFO services to businesses, helping them achieve financial clarity, growth, and success.
+                </p>
+                <p>
+                    Our team of experienced finance professionals offers a range of services, including financial
+                    planning, budgeting, forecasting, and financial reporting. We take a client-centric approach,
+                    working closely with business owners to understand their unique needs and goals.
+                </p>
+            </div>
+            <div class="about-values">
+                <h2 class="section-title" style="text-align:left;">Our Values</h2>
+                <div class="values-list">
+                    <div class="value-item">
+                        <span class="value-icon">&#128170;</span>
+                        <div>
+                            <h3>Integrity</h3>
+                            <p>We uphold the highest standards of honesty and ethical conduct.</p>
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <span class="value-icon">&#128269;</span>
+                        <div>
+                            <h3>Transparency</h3>
+                            <p>Clear communication and open financial reporting at every step.</p>
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <span class="value-icon">&#128161;</span>
+                        <div>
+                            <h3>Innovation</h3>
+                            <p>Modern financial strategies tailored to your business needs.</p>
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <span class="value-icon">&#127942;</span>
+                        <div>
+                            <h3>Excellence</h3>
+                            <p>Commitment to delivering outstanding results every time.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Founders -->
+        <div class="founders-section fade-in">
+            <h2 class="section-title">Our Founders</h2>
+            <p class="section-subtitle">The leaders behind Kotak & Associates</p>
+            <div class="founders-grid">
+                <div class="founder-card">
+                    <div class="founder-avatar">GK</div>
+                    <h3>Gaurang Kotak</h3>
+                    <p>Co-Founder & Financial Strategist</p>
+                </div>
+                <div class="founder-card">
+                    <div class="founder-avatar">BB</div>
+                    <h3>Bharat Baneree</h3>
+                    <p>Co-Founder & Business Advisor</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Do You Know Section -->
+        <div style="margin-top: 60px;">
+            <h2 class="section-title">Do You Know, Entrepreneur?</h2>
+            <p class="section-subtitle">Click on any question to discover how we can help</p>
+            <div class="faq-list fade-in">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Whether your financial complexities are holding you back?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Many businesses struggle with tangled finances — unclear reports, messy books, and no clarity on where money is going. Our Virtual CFO service streamlines your financial systems, giving you a clear picture so you can focus on growing your business without financial confusion.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Whether your business is prepared for unexpected financial challenges or risks?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most businesses don't plan for financial emergencies until it's too late. We help you build a strong financial safety net through risk assessment, contingency planning, and smart reserve management — so your business stays resilient no matter what comes.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Whether your financial stress impacts your business growth decisions?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>When finances are uncertain, business owners hesitate to invest, expand, or hire. We remove that stress by providing data-driven financial insights and forecasts, empowering you to make confident growth decisions backed by real numbers.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Where your business stands compared to your competitors?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Without benchmarking, you're flying blind. We analyze your financial performance against industry standards and competitors, identifying gaps and opportunities so you can stay ahead in your market.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Whether your financial reports are accurate and providing insights for informed decisions?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Inaccurate or delayed reports lead to poor decisions. We ensure your financial reporting is timely, accurate, and packed with actionable insights — turning raw numbers into a strategic roadmap for your business.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Whether you are struggling to manage your company's cash flow?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Cash flow is the lifeline of any business. We implement robust cash flow management systems — tracking receivables, optimizing payables, and forecasting future cash needs — so you never face a cash crunch again.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Whether your business is overspending and where you can save money?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Hidden costs and unnecessary expenses eat into your profits silently. Our detailed cost analysis identifies exactly where you're overspending and provides actionable strategies to cut costs without compromising quality or growth.</p>
+                    </div>
+                </div>
+            </div>
+            <p class="section-subtitle" style="margin-top: 30px; font-weight: 600; color: var(--primary);">
+                We can provide you a strategic financial partner without the cost of a full-time CFO.
+            </p>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.querySelectorAll('.faq-question').forEach(function(question) {
+    question.addEventListener('click', function() {
+        const item = this.parentElement;
+        const isActive = item.classList.contains('active');
+
+        // Close all other items
+        document.querySelectorAll('.faq-item').forEach(function(faq) {
+            faq.classList.remove('active');
+        });
+
+        // Toggle current item
+        if (!isActive) {
+            item.classList.add('active');
+        }
+    });
+});
+</script>
+{% endblock %}

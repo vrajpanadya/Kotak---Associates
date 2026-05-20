@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Our Team | Kotak & Associates{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <div class="page-header-bg">
+        <span class="ph-shape ph-shape-1"></span>
+        <span class="ph-shape ph-shape-2"></span>
+        <span class="ph-shape ph-shape-3"></span>
+    </div>
+    <div class="page-header-inner">
+        <span class="ph-badge"><i class="fas fa-users"></i> Our People</span>
+        <h1>Meet the <span class="ph-highlight">Team Behind</span> Your Success</h1>
+        <p>Experienced professionals dedicated to helping your business grow stronger every single day.</p>
+        <div class="ph-meta">
+            <div class="ph-meta-item"><i class="fas fa-user-tie"></i> CA Certified Experts</div>
+            <div class="ph-meta-item"><i class="fas fa-lightbulb"></i> Industry Experience</div>
+            <div class="ph-meta-item"><i class="fas fa-heart"></i> Client-Centric</div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Banner Image -->
+<section class="tm-banner fade-in">
+    <img src="{% static 'images/site/teamwork.jpg' %}" alt="Kotak & Associates Team">
+    <div class="tm-banner-overlay">
+        <h3>Working Together, Growing Together</h3>
+    </div>
+</section>
+
+<!-- Founders Section -->
+<section class="tm-founders">
+    <div class="container">
+        <h2 class="section-title fade-in">Our Founders</h2>
+        <p class="section-subtitle fade-in">Visionary leaders driving your financial growth</p>
+        <div class="tm-founders-grid fade-in">
+            <!-- Gaurang Kotak -->
+            <div class="tm-founder-card">
+                <div class="tm-avatar" style="background: linear-gradient(135deg, #1a3a5c, #2980b9);">GK</div>
+                <h3 class="tm-founder-name">Gaurang Kotak</h3>
+                <p class="tm-founder-designation">CA, Co-Founder</p>
+                <p class="tm-founder-desc">
+                    12+ years of experience in financial consulting, auditing, and business advisory.
+                    Expert in financial planning, internal controls, and IPO advisory.
+                </p>
+                <div class="tm-tags">
+                    <span class="tm-tag">Financial Strategy</span>
+                    <span class="tm-tag">Business Valuation</span>
+                    <span class="tm-tag">IPO Advisory</span>
+                    <span class="tm-tag">Tax Planning</span>
+                </div>
+                <div class="tm-social">
+                    <a href="#" class="tm-social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="tm-social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="tm-social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <!-- Bharat Baneree -->
+            <div class="tm-founder-card">
+                <div class="tm-avatar" style="background: linear-gradient(135deg, #1a3a5c, #27ae60);">BB</div>
+                <h3 class="tm-founder-name">Bharat Baneree</h3>
+                <p class="tm-founder-designation">Co-Founder</p>
+                <p class="tm-founder-desc">
+                    10+ years of experience in business operations, process optimization, and management consulting.
+                    Expert in KPI tracking, liquidity management, and business health diagnostics.
+                </p>
+                <div class="tm-tags">
+                    <span class="tm-tag">Operations</span>
+                    <span class="tm-tag">KRA-KPI</span>
+                    <span class="tm-tag">Cash Flow Management</span>
+                    <span class="tm-tag">Business Advisory</span>
+                </div>
+                <div class="tm-social">
+                    <a href="#" class="tm-social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="tm-social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="tm-social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Our Team -->
+<section class="tm-why">
+    <div class="container">
+        <h2 class="section-title fade-in">Why Our Team</h2>
+        <p class="section-subtitle fade-in">What sets us apart from the rest</p>
+        <div class="tm-why-grid fade-in">
+            <div class="tm-why-card">
+                <div class="tm-why-icon"><i class="fas fa-certificate"></i></div>
+                <h3>CA & CPA Certified</h3>
+            </div>
+            <div class="tm-why-card">
+                <div class="tm-why-icon"><i class="fas fa-award"></i></div>
+                <h3>12+ Years Combined Experience</h3>
+            </div>
+            <div class="tm-why-card">
+                <div class="tm-why-icon"><i class="fas fa-building"></i></div>
+                <h3>100+ Businesses Served</h3>
+            </div>
+            <div class="tm-why-card">
+                <div class="tm-why-icon"><i class="fas fa-star"></i></div>
+                <h3>Industry Specialists</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Members Section -->
+<section class="tm-members">
+    <div class="container">
+        <h2 class="section-title fade-in">Our Professionals</h2>
+        <p class="section-subtitle fade-in">Talented individuals powering your success</p>
+        <div class="tm-members-grid fade-in">
+            <!-- Neha Patel -->
+            <div class="tm-member-card">
+                <div class="tm-avatar" style="background: linear-gradient(135deg, #6c5ce7, #a29bfe);">NP</div>
+                <h3 class="tm-member-name">Neha Patel</h3>
+                <p class="tm-member-role">Senior Financial Analyst</p>
+                <p class="tm-member-desc">Specializes in financial modeling, MIS reporting, and budget analysis.</p>
+                <div class="tm-social">
+                    <a href="#" class="tm-social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Vikram Desai -->
+            <div class="tm-member-card">
+                <div class="tm-avatar" style="background: linear-gradient(135deg, #e17055, #fdcb6e);">VD</div>
+                <h3 class="tm-member-name">Vikram Desai</h3>
+                <p class="tm-member-role">Tax & Compliance Head</p>
+                <p class="tm-member-desc">Expert in GST compliance, income tax planning, and audit support.</p>
+                <div class="tm-social">
+                    <a href="#" class="tm-social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Anita Sharma -->
+            <div class="tm-member-card">
+                <div class="tm-avatar" style="background: linear-gradient(135deg, #00b894, #55efc4);">AS</div>
+                <h3 class="tm-member-name">Anita Sharma</h3>
+                <p class="tm-member-role">Business Advisory Lead</p>
+                <p class="tm-member-desc">Focuses on business health checkups, cash flow optimization, and AR/AP management.</p>
+                <div class="tm-social">
+                    <a href="#" class="tm-social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Rohit Joshi -->
+            <div class="tm-member-card">
+                <div class="tm-avatar" style="background: linear-gradient(135deg, #0984e3, #74b9ff);">RJ</div>
+                <h3 class="tm-member-name">Rohit Joshi</h3>
+                <p class="tm-member-role">Technology & Dashboards</p>
+                <p class="tm-member-desc">Builds custom finance dashboards, implements ERP integrations.</p>
+                <div class="tm-social">
+                    <a href="#" class="tm-social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Join Our Team CTA -->
+<section class="tm-join">
+    <div class="container">
+        <div class="tm-join-card fade-in">
+            <h2>Join Our Growing Team</h2>
+            <p>We're always looking for talented finance professionals who share our passion for helping businesses grow.</p>
+            <a href="{% url 'contact' %}" class="btn btn-primary">View Open Positions</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
